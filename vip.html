@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>中国移动</title>
+</head>
+
+<body onLoad="showPage()" style="overflow:hidden;">
+<!--loading-->
+<div id="divPageLoading">
+  <img src="img/loading.gif"/>
+</div>
+ <!--音频-->
+<audio autoplay controls loop style="display: none; opacity: 0;">
+  <!--不好意思,你的浏览器不支持视频.-->
+  <!-----------------------change by 2016/2/1 start------------------------------>
+  <source src="changtu_bg.mp3"/>
+  <!-----------------------change by 2016/2/1 start------------------------------>
+</audio>
+<!-----------------------change by 2016/1/30 start------------------------------>
+<div id="no_off" style="padding:.5rem;z-index:40000000;"><img src="img/no_off.png"/></div>
+<!-----------------------change by 2016/1/30 end------------------------------>
+<div class="container" id="wrap" style="display:none" >
+  <div class="lxy"></div>
+  <div class="vip_redStar"></div>
+  <div class="vip_code">
+  	<img style="width:100%;z-index:3000000;" src="img/p5-3_3.png"/>
+  </div>
+  <div class="vip_text">
+    扫码关注 “<span>武汉移动客服</span>” 公众号 <br/>
+    <span>|</span><br/>
+    <a href="###"><span>注册</span></a>成为会员 <br/>
+    <span>|</span><br/>
+    进入<a href="#"><span>会员中心</span></a><br/>
+    <span>|</span><br/>
+    查看您的【<span>2015年度账单</span>】
+  </div>
+  <div class="vip_order"></div>
+  <div class="vip_greenStar"></div>
+  <!-----------------------change by 2016/1/30 start------------------------------>
+	<!--二维码感应区-->
+  <!--去掉它--<img class="for_code" src="img/for_code.png" /-------------->
+  <!-----------------------change by 2016/1/30 end------------------------------>
+  
+</div>
+<script>
+function showPage(){
+	  document.querySelector('#divPageLoading').style.display = 'none';	
+	  document.querySelector('#wrap').style.display = 'block';	
+	}
+  /*****************************rem相对单位****************************************/
+  (function(win){
+    var pageWidth = 6.4; /////设计图宽度640/100
+    var docEl = document.documentElement;
+    windowScale = function(){
+      docEl.style.fontSize = docEl.getBoundingClientRect().width/pageWidth + 'px';
+    }
+    windowScale();
+    window.onresize = windowScale;
+  })(window);
+  
+//<!-----------------------change by 2016/1/30 start------------------------------>
+//暂停与播放
+var audio = document.querySelector('audio');
+var on_off = document.querySelector('#no_off');
+on_off.onclick = function(){
+	if (audio.paused){
+
+           audio.play();
+
+	}else{
+
+           audio.pause();
+
+       }
+}
+//<!-----------------------change by 2016/1/30 end------------------------------>
+
+</script>
+</body>
+
+</html>
