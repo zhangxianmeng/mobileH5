@@ -129,56 +129,6 @@
 </div>
 <!-----------------------change by 2016/1/30 start------------------------------>
 <script src="js/my.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript">
-        var ORDER_AGE = [{ id: 1, pic: "ORDER_AGE_1.png", name: "天山童姥" },
-            { id: 2, pic: "ORDER_AGE_2.png", name: "一袋宗师" },
-            { id: 3, pic: "ORDER_AGE_3.png", name: "武林萌主" },
-            { id: 4, pic: "ORDER_AGE_4.png", name: "江湖星秀" },
-            { id: 5, pic: "ORDER_AGE_5.png", name: "新生菜鸟" }];
-
-        var ORDER_YEAR_CHARGE = [{ id: 1, pic: "ORDER_YEAR_CHARGE_1.png", name: "霸道总裁" },
-       { id: 2, pic: "ORDER_YEAR_CHARGE_2.png", name: "点金胜手" },
-       { id: 3, pic: "ORDER_YEAR_CHARGE_3.png", name: "小财神" },
-       { id: 4, pic: "ORDER_YEAR_CHARGE_4.png", name: "钱袋子" },
-       { id: 5, pic: "ORDER_YEAR_CHARGE_5.png", name: "精算师" }];
-
-        var DOU = [{ id: 1, pic: "DOU_1.png", name: "流气冲天" }, { id: 2, pic: "DOU_2.png", name: "资深网咖" }, { id: 3, pic: "DOU_3.png", name: "流掰掰" }, { id: 4, pic: "DOU_4.png", name: "微量版主" }, { id: 5, pic: "DOU_5.png", name: "无量天师" }, { id: -1, pic: "DOU_-1.png", name: "出土文物" }, { id: -2, pic: "DOU_-2.png", name: "默剧大师" }, { id: -3, pic: "DOU_-3.png", name: "贤人隐士" }];
-
-        var DURA = [{ id: 1, pic: "DURA_1.png", name: "煲粥统领" }, { id: 2, pic: "DURA_2.png", name: "话山岛主" }, { id: 3, pic: "DURA_3.png", name: "资深话痨" }, { id: 4, pic: "DURA_4.png", name: "惜言雅士" }, { id: 5, pic: "DURA_5.png", name: "听语元老" }];
-
-        var ROAM_DURATION_M_YEAR = [{ id: 1, pic: "ROAM_DURATION_M_YEAR_1.png", name: "4G飞人" }, { id: 2, pic: "ROAM_DURATION_M_YEAR_2.png", name: "4G先锋" }, { id: 3, pic: "ROAM_DURATION_M_YEAR_3.png", name: "4G精英" }, { id: 4, pic: "ROAM_DURATION_M_YEAR_4.png", name: "4G队长" }, { id: 5, pic: "ROAM_DURATION_M_YEAR_5.png", name: "4G游侠" }, { id: -4, pic: "ROAM_DURATION_M_YEAR_-4.png", name: "爱家领袖" }];
-
-        var Other = [{ id: -1, pic: "DOU_-1.png", name: "出土文物" }, { id: -2, pic: "DOU_-2.png", name: "默剧大师" }, { id: -3, pic: "DOU_-3.png", name: "贤人隐士" }, { id: -4, pic: "ROAM_DURATION_M_YEAR_-4.png", name: "爱家领袖" }];
-
-        $(document).ready(function () {
-            $.ajax({
-                type: "get",
-                //async: true,
-                url: "http://test.better1.cn/Home/get",
-                dataType: "jsonp",
-                success: function (json) {
-                    $(".myname img").attr("src", "img/" + ORDER_AGE[json.order_age - 1].pic);
-                    $(".myname02 img").attr("src", "img/" + ORDER_YEAR_CHARGE[json.order_year_charge - 1].pic);
-                    if (json.dou > 0) {
-                        $(".p3_myname img").attr("src", "img/" + DURA[json.dura - 1].pic);
-                    } else {
-                        $(".p3_myname img").attr("src", "img/" + Other[Math.abs(json.dou) - 1].pic);
-                    }
-                    $(".p3_myname02 img").attr("src", "img/" + DOU[json.dou - 1].pic);
-
-                    if (json.roam_duration_m_year > 0) {
-                        $(".p4_myname img").attr("src", "img/" + ROAM_DURATION_M_YEAR[json.roam_duration_m_year - 1].pic);
-                    } else {
-                        $(".p4_myname img").attr("src", "img/" + Other[Math.abs(json.roam_duration_m_year) - 1].pic);
-                    }
-                },
-                error: function () {
-                    alert('fail');
-                }
-            });
-        });
-    </script>
 <!-----------------------change by 2016/1/30 end------------------------------>
 </body>
 

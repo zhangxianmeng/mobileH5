@@ -10,10 +10,12 @@ a{
   text-decoration: none;
 }
 html,body{
-  width:100%;
+  max-width:640px;
   height:100%;
   overflow-x: hidden;
   -webkit-overflow-x: hidden;
+  margin: 0 auto;
+
 }
 body {
   position: relative;
@@ -26,6 +28,7 @@ body {
   background: url("../img/bg.png") no-repeat;
   background-size:cover;
   background-position: top center;
+
 }
 .pages{
   width: 100%;
